@@ -1,0 +1,29 @@
+from processing import *
+
+def setup():
+  size(1000, 1000)
+  noStroke()
+  
+def boxes(x, y, size):
+  new_size = size
+  if new_size < 1:
+    return
+  rectMode(CENTER)
+  rect(x, y, size/3, size/3)
+  
+  boxes(x-size/2, y-size/2, size/3)
+  boxes(x+size/2, y+size/2, size/3)
+  boxes(x-size/2, y+size/2, size/3)
+  boxes(x+size/2, y-size/2, size/3)
+  boxes(x, y-size/2, size/3)
+  boxes(x, y+size/2, size/3)
+  boxes(x-size/2, y, size/3)
+  boxes(x+size/2, y, size/3)
+
+
+
+def draw():
+  background(0,0,0)
+  fill(255, 255, 255)
+  boxes(500, 500, 600)
+ 
